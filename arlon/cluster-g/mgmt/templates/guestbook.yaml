@@ -14,5 +14,5 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bcle/fleet-infra.git
-    path: cluster-g/workload/guestbook
+    path: arlon/cluster-g/workload/guestbook
     targetRevision: HEAD

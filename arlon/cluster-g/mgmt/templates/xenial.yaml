@@ -14,5 +14,5 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bcle/fleet-infra.git
-    path: cluster-g/workload/xenial
+    path: arlon/cluster-g/workload/xenial
     targetRevision: HEAD
