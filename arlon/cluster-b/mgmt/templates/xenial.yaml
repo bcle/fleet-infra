@@ -1,0 +1,18 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster-b-xenial
+  namespace: argocd
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+  destination:
+    name: cluster-b
+    namespace: default
+  project: default
+  source:
+    repoURL: https://github.com/bcle/fleet-infra.git
+    path: arlon/cluster-b/workload/xenial
+    targetRevision: HEAD
