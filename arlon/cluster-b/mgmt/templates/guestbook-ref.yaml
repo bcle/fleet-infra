@@ -14,5 +14,5 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bcle/fleet-infra.git
-    path: bundles/guestbook-ref/guestbook-ref
+    path: bundles/guestbook-ref
     targetRevision: HEAD

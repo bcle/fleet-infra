@@ -14,5 +14,5 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bcle/fleet-infra.git
-    path: bundles/xenial-ref/xenial-ref
+    path: bundles/xenial-ref
     targetRevision: HEAD
