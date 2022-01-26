@@ -1,0 +1,18 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster-b-guestbook-ref
+  namespace: argocd
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+  destination:
+    name: cluster-b
+    namespace: default
+  project: default
+  source:
+    repoURL: https://github.com/bcle/fleet-infra.git
+    path: bundles/guestbook-ref/guestbook-ref
+    targetRevision: HEAD
