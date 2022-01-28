@@ -1,0 +1,18 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ clusterName }}-xenial
+  namespace: argocd
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+  destination:
+    name: {{ clusterName }}
+    namespace: default
+  project: default
+  source:
+    repoURL: https://github.com/bcle/fleet-infra.git
+    path: profiles/dyntest-1/templates/xenial
+    targetRevision: HEAD
