@@ -14,7 +14,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bcle/fleet-infra.git
-    path: profiles/dyntest-1
+    path: profiles/dyntest-1/mgmt
     targetRevision: HEAD
     helm:
       parameters:
