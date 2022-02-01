@@ -1,0 +1,18 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.clusterName }}-guestbook
+  namespace: argocd
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+  destination:
+    name: {{ .Values.clusterName }}
+    namespace: default
+  project: default
+  source:
+    repoURL: https://github.com/bcle/fleet-infra.git
+    path: profiles/invalid-1/workload/guestbook
+    targetRevision: HEAD
