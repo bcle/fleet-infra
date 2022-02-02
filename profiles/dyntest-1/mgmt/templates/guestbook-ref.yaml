@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.clusterName }}-guestbook
+  name: {{ .Values.clusterName }}-guestbook-ref
   namespace: argocd
 spec:
   syncPolicy:
@@ -14,5 +14,5 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bcle/fleet-infra.git
-    path: profiles/dyntest-1/workload/guestbook
+    path: bundles/guestbook-ref
     targetRevision: HEAD
