@@ -2,8 +2,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.clusterName }}-xenial
+  name: {{ .Values.clusterName }}-guestbook
   namespace: argocd
+  finalizers:
+  # This solves issue #17
+  - resources-finalizer.argocd.argoproj.io/foreground
 spec:
   syncPolicy:
     automated:
@@ -14,5 +17,5 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bcle/fleet-infra.git
-    path: profiles/dyntest-1/workload/xenial
+    path: profiles/dyntest-1/workload/guestbook
     targetRevision: HEAD
