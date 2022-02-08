@@ -29,33 +29,6 @@ spec:
   sshKeyName: leb
   version: v1.18.16
 ---
-# Source: arlon-cluster/templates/profile.yaml
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: cluster-b-profile-dyntest-1
-  namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io/foreground
-spec:
-  syncPolicy:
-    automated:
-      prune: true
-    syncOptions:
-    - Prune=true
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: argocd
-  project: default
-  source:
-    repoURL: https://github.com/bcle/fleet-infra.git
-    path: profiles/dyntest-1/mgmt
-    targetRevision: HEAD
-    helm:
-      parameters:
-      - name: clusterName
-        value: cluster-b
----
 # Source: arlon-cluster/templates/cluster.yaml
 apiVersion: cluster.x-k8s.io/v1beta1
 kind: Cluster
