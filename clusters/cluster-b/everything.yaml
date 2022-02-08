@@ -93,22 +93,3 @@ spec:
         kind: AWSMachineTemplate
         name: cluster-b-md-0
       version: v1.18.16
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: cluster-b-guestbook-ref
-  namespace: argocd
-spec:
-  syncPolicy:
-    automated:
-      prune: true
-  destination:
-    name: cluster-b
-    namespace: default
-  project: default
-  source:
-    repoURL: https://github.com/bcle/fleet-infra.git
-    path: bundles/guestbook-ref
-    targetRevision: HEAD
-
