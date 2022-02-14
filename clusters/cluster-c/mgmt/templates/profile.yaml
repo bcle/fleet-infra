@@ -23,3 +23,5 @@ spec:
       parameters:
       - name: clusterName
         value: cluster-c
+      - name: profileAppName
+        value: cluster-c-profile-dyntest-1
