@@ -14,4 +14,5 @@ global:
 tags:
   capi-aws-eks: false
   capi-aws-kubeadm: false
+  xplane-aws-eks: false
 
