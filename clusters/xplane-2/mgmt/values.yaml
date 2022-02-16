@@ -10,6 +10,7 @@ global:
   podCidrBlock: 192.168.0.0/16
   nodeCount: 2
   nodeType: t3.large
+  kubeconfigSecretKeyName: value
 
 tags:
   capi-aws-eks: false

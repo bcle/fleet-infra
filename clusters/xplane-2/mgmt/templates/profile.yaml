@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: xplane-2-xenial-ref
+  name: xplane-2-profile-dyntest-2
   namespace: argocd
   finalizers:
   # This solves issue #17
@@ -12,10 +12,16 @@ spec:
     automated:
       prune: true
   destination:
-    name: xplane-2
-    namespace: default
+    server: https://kubernetes.default.svc
+    namespace: argocd
   project: default
   source:
     repoURL: https://github.com/bcle/fleet-infra.git
-    path: bundles/xenial-ref
+    path: profiles/dyntest-2/mgmt
     targetRevision: HEAD
+    helm:
+      parameters:
+      - name: clusterName
+        value: xplane-2
+      - name: profileAppName
+        value: xplane-2-profile-dyntest-2
