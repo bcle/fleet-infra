@@ -9,3 +9,5 @@ kubernetesVersion: v1.18.16
 podCidrBlock: 192.168.0.0/16
 nodeCount: 2
 nodeType: t3.large
+tags:
+  enable-dummy: false
