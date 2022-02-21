@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cluster-b-profile-dyntest-2
+  name: cluster-b-profile-dyntest-1
   namespace: argocd
   finalizers:
   # This solves issue #17
@@ -17,11 +17,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bcle/fleet-infra.git
-    path: profiles/dyntest-2/mgmt
+    path: profiles/dyntest-1/mgmt
     targetRevision: HEAD
     helm:
       parameters:
       - name: clusterName
         value: cluster-b
       - name: profileAppName
-        value: cluster-b-profile-dyntest-2
+        value: cluster-b-profile-dyntest-1
