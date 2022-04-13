@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: guestbook-ui
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -19,6 +19,10 @@ spec:
           name: guestbook-ui
           ports:
             - containerPort: 80
+          resources:
+             requests:
+                memory: "300M"
+                cpu: "200m"
 ---
 # Source: https://raw.githubusercontent.com/argoproj/argocd-example-apps/master/guestbook/guestbook-ui-svc.yaml
 apiVersion: v1
