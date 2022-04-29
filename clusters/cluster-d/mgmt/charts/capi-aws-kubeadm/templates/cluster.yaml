@@ -75,6 +75,9 @@ kind: MachineDeployment
 metadata:
   name: {{ .Values.global.clusterName }}-md-0
   namespace: {{ .Values.global.clusterName }}
+  annotations:
+    cluster.x-k8s.io/cluster-api-autoscaler-node-group-min-size: "1"
+    cluster.x-k8s.io/cluster-api-autoscaler-node-group-max-size: "9"
 spec:
   clusterName: {{ .Values.global.clusterName }}
   replicas: {{ .Values.global.nodeCount }}
