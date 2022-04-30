@@ -18,7 +18,7 @@ spec:
   source:
     repoURL: https://github.com/bcle/fleet-infra.git
     path: profiles/dyntest-1/workload/calico
-    targetRevision: HEAD
+    targetRevision: main
     helm:
       parameters:
       # Pass cluster name to the bundle in case it needs it and is a Helm chart.
