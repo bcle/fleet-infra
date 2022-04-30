@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.clusterName }}-guestbook-dyn
+  name: {{ .Values.clusterName }}-capi-cluster-autoscaler
   namespace: argocd
   finalizers:
   # This solves issue #17
@@ -16,8 +16,8 @@ spec:
     namespace: default
   project: default
   source:
-    repoURL: https://github.com/bcle/fleet-infra.git
-    path: bundles/guestbook-dyn
+    repoURL: https://github.com/platform9/arlon.git
+    path: bundles/capi-autoscaler
     targetRevision: HEAD
     helm:
       parameters:
