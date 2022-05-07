@@ -9,6 +9,8 @@ metadata:
   - resources-finalizer.argocd.argoproj.io/foreground
 spec:
   syncPolicy:
+    syncOptions:
+    - Replace=true
     automated:
       prune: true
   destination:
