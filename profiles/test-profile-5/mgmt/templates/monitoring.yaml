@@ -30,3 +30,5 @@ spec:
         value: googoogaga
       - name: cpuRequest
         value: 20m
+      - name: memoryLimit
+        value: 500Mi
