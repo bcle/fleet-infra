@@ -27,6 +27,6 @@ spec:
       - name: arlon.clusterName
         value: {{ .Values.clusterName }}
       - name: foo
-        value: bar
+        value: googoogaga
       - name: cpuRequest
         value: 20m
