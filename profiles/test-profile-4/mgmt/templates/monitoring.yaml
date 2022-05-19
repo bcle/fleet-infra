@@ -31,4 +31,4 @@ spec:
       - name: retentionTime
         value: 3d
       - name: grafanaUiSvcType
-        value: LoadBalancer
+        value: ClusterIP
