@@ -26,3 +26,9 @@ spec:
       # Use arlon prefix to avoid any conflicts with the bundle's own values.
       - name: arlon.clusterName
         value: {{ .Values.clusterName }}
+      - name: foo
+        value: bar
+      - name: retentionTime
+        value: 3d
+      - name: grafanaUiSvcType
+        value: LoadBalancer
