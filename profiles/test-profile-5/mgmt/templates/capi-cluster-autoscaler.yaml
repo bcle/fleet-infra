@@ -18,7 +18,6 @@ spec:
   source:
     repoURL: https://github.com/platform9/arlon.git
     path: bundles/capi-cluster-autoscaler
-    targetRevision: private/leb/callhomeconfig
     helm:
       parameters:
       # Pass cluster name to the bundle in case it needs it and is a Helm chart.
