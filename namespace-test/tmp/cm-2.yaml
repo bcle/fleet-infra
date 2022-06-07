@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cm-2
+data:
+  bundles: xenial
+  description: dynamic test 1
+  repo-branch: main
+  repo-path: profiles/dynamic-1
+  repo-url: https://github.com/bcle/fleet-infra.git
+  tags: examples
