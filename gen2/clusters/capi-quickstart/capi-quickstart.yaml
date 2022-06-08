@@ -21,7 +21,7 @@ kind: AWSCluster
 metadata:
   name: capi-quickstart
 spec:
-  region: us-east-1
+  region: us-west-2
   sshKeyName: leb
 ---
 apiVersion: controlplane.cluster.x-k8s.io/v1beta1
