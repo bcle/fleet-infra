@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  foo: bar
+  xxx: yyy
+kind: ConfigMap
+metadata:
+  name: my-cfgmap-1
+  namespace: my-cfgmap-1
