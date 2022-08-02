@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.clusterName }}-xenial
+  name: {{ .Values.clusterName }}-guestbook-dyn
   namespace: argocd
   finalizers:
   # This solves issue #17
@@ -17,5 +17,5 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bcle/fleet-infra.git
-    path: profiles/test-profile-5/workload/xenial
+    path: bundles/guestbook-dyn
     targetRevision: HEAD
