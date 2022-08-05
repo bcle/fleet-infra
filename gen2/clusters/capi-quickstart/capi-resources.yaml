@@ -65,6 +65,10 @@ spec:
       iamInstanceProfile: control-plane.cluster-api-provider-aws.sigs.k8s.io
       instanceType: t3.large
       sshKeyName: leb
+      additionalTags:
+         Product: PMKEnterprise
+         Team: Enterprise
+         Environment: Development
 ---
 apiVersion: cluster.x-k8s.io/v1beta1
 kind: MachineDeployment
@@ -72,7 +76,7 @@ metadata:
   name: capi-quickstart-md-0
 spec:
   clusterName: capi-quickstart
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels: null
   template:
@@ -99,6 +103,10 @@ spec:
       iamInstanceProfile: nodes.cluster-api-provider-aws.sigs.k8s.io
       instanceType: t3.large
       sshKeyName: leb
+      additionalTags:
+         Product: PMKEnterprise
+         Team: Enterprise
+         Environment: Development
 ---
 apiVersion: bootstrap.cluster.x-k8s.io/v1beta1
 kind: KubeadmConfigTemplate
