@@ -76,7 +76,7 @@ metadata:
   name: capi-quickstart-md-0
 spec:
   clusterName: capi-quickstart
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels: null
   template:
