@@ -1,0 +1,53 @@
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: Cluster
+metadata:
+  name: mycluster
+  namespace: argocd-e2e
+spec:
+  clusterNetwork:
+    pods:
+      cidrBlocks:
+      - 192.168.0.0/16
+  controlPlaneRef:
+    apiVersion: controlplane.cluster.x-k8s.io/v1beta1
+    kind: AWSManagedControlPlane
+    name: mycluster-control-plane
+  infrastructureRef:
+    apiVersion: controlplane.cluster.x-k8s.io/v1beta1
+    kind: AWSManagedControlPlane
+    name: mycluster-control-plane
+---
+apiVersion: controlplane.cluster.x-k8s.io/v1beta1
+kind: AWSManagedControlPlane
+metadata:
+  name: mycluster-control-plane
+  namespace: argocd-e2e
+spec:
+  region: us-west-2
+  sshKeyName: leb
+  version: v1.22.0
+---
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: MachinePool
+metadata:
+  name: mycluster-pool-0
+  namespace: argocd-e2e
+spec:
+  clusterName: mycluster
+  replicas: 0
+  template:
+    spec:
+      bootstrap:
+        dataSecretName: ""
+      clusterName: mycluster
+      infrastructureRef:
+        apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+        kind: AWSManagedMachinePool
+        name: mycluster-pool-0
+---
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: AWSManagedMachinePool
+metadata:
+  name: mycluster-pool-0
+  namespace: argocd-e2e
+spec: {}
