@@ -80,3 +80,9 @@ nameReference:
     kind: MachineDeployment
   - path: spec/machineTemplate/infrastructureRef/name
     kind: KubeadmControlPlane
+- kind: AWSManagedMachinePool
+  group: infrastructure.cluster.x-k8s.io
+  version: v1beta1
+  fieldSpecs:
+  - path: spec/template/spec/infrastructureRef/name
+    kind: MachinePool
