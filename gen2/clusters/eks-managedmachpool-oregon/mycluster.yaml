@@ -2,7 +2,6 @@ apiVersion: cluster.x-k8s.io/v1beta1
 kind: Cluster
 metadata:
   name: mycluster
-  namespace: argocd-e2e
 spec:
   clusterNetwork:
     pods:
@@ -21,7 +20,6 @@ apiVersion: controlplane.cluster.x-k8s.io/v1beta1
 kind: AWSManagedControlPlane
 metadata:
   name: mycluster-control-plane
-  namespace: argocd-e2e
 spec:
   region: us-west-2
   sshKeyName: leb
@@ -31,7 +29,6 @@ apiVersion: cluster.x-k8s.io/v1beta1
 kind: MachinePool
 metadata:
   name: mycluster-pool-0
-  namespace: argocd-e2e
 spec:
   clusterName: mycluster
   replicas: 0
@@ -49,5 +46,4 @@ apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: AWSManagedMachinePool
 metadata:
   name: mycluster-pool-0
-  namespace: argocd-e2e
 spec: {}
