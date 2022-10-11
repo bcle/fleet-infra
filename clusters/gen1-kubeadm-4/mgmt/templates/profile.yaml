@@ -1,0 +1,27 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gen1-kubeadm-4-profile-test-profile-5
+  namespace: argocd
+  finalizers:
+  # This solves issue #17
+  - resources-finalizer.argocd.argoproj.io/foreground
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  project: default
+  source:
+    repoURL: https://github.com/bcle/fleet-infra.git
+    path: profiles/test-profile-5/mgmt
+    targetRevision: HEAD
+    helm:
+      parameters:
+      - name: clusterName
+        value: gen1-kubeadm-4
+      - name: profileAppName
+        value: gen1-kubeadm-4-profile-test-profile-5
