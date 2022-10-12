@@ -2,7 +2,6 @@ apiVersion: cluster.x-k8s.io/v1beta1
 kind: Cluster
 metadata:
   name: my-cluster
-  namespace: my-cluster
 spec:
   clusterNetwork:
     pods:
@@ -21,7 +20,6 @@ apiVersion: controlplane.cluster.x-k8s.io/v1beta1
 kind: AWSManagedControlPlane
 metadata:
   name: my-cluster-control-plane
-  namespace: my-cluster
 spec:
   region: us-west-1
   sshKeyName: leb
@@ -31,7 +29,6 @@ apiVersion: cluster.x-k8s.io/v1beta1
 kind: MachinePool
 metadata:
   name: my-cluster-pool-0
-  namespace: my-cluster
 spec:
   clusterName: my-cluster
   replicas: 2
@@ -49,7 +46,6 @@ apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: AWSManagedMachinePool
 metadata:
   name: my-cluster-pool-0
-  namespace: my-cluster
 spec:
   scaling:
     maxSize: 5
