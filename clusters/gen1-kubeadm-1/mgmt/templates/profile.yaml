@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gen1-kubeadm-1-profile-dynamic-2-calico
+  name: gen1-kubeadm-1-profile-test-profile-5
   namespace: argocd
   finalizers:
   # This solves issue #17
@@ -17,11 +17,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/bcle/fleet-infra.git
-    path: profiles/dynamic-2-calico/mgmt
+    path: profiles/test-profile-5/mgmt
     targetRevision: HEAD
     helm:
       parameters:
       - name: clusterName
         value: gen1-kubeadm-1
       - name: profileAppName
-        value: gen1-kubeadm-1-profile-dynamic-2-calico
+        value: gen1-kubeadm-1-profile-test-profile-5
