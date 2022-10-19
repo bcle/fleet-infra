@@ -9,3 +9,6 @@ commonAnnotations:
 
 resources:
 - git::https://github.com/bcle/fleet-infra-1.git//bundles/guestbook-kust-2
+
+patches:
+- patch1.yaml
