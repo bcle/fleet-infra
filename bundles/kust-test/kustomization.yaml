@@ -6,6 +6,7 @@ commonAnnotations:
   goo: gap
   xxx: yyy
   sss: ttt
+  fff: ggg
 
 resources:
 - git::https://github.com/bcle/fleet-infra-1.git//bundles/guestbook-kust-2
