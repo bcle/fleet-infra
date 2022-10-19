@@ -3,4 +3,4 @@ kind: Deployment
 metadata:
   name: guestbook-kust-2
   annotations:
-    ggg: hhh
+    arlon-generation: "1"
