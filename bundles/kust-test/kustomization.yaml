@@ -1,0 +1,6 @@
+
+commonLabels:
+  foo: bar
+
+resources:
+- git::https://github.com/bcle/fleet-infra.git/bundles/guestbook-kust/guestbook.yaml
