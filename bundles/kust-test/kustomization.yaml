@@ -1,7 +1,9 @@
 
 commonLabels:
   foo: bar
-  xxx: yyy
+
+commonAnnotations:
+  goo: gap
 
 resources:
 - git::https://github.com/bcle/fleet-infra-1.git//bundles/guestbook-kust-2
