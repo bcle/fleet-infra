@@ -61,16 +61,19 @@ metadata:
 spec:
   template:
     spec:
+      additionalTags:
+        Environment: Development
+        Product: PMKEnterprise
+        Team: Enterprise
       iamInstanceProfile: control-plane.cluster-api-provider-aws.sigs.k8s.io
       instanceType: t3.large
-      additionalTags:
-         Product: PMKEnterprise
-         Team: Enterprise
-         Environment: Development
 ---
 apiVersion: cluster.x-k8s.io/v1beta1
 kind: MachineDeployment
 metadata:
+  annotations:
+    cluster.x-k8s.io/cluster-api-autoscaler-node-group-max-size: "9"
+    cluster.x-k8s.io/cluster-api-autoscaler-node-group-min-size: "1"
   name: mykubeadm-md-0
 spec:
   clusterName: mykubeadm
@@ -98,12 +101,12 @@ metadata:
 spec:
   template:
     spec:
+      additionalTags:
+        Environment: Development
+        Product: PMKEnterprise
+        Team: Enterprise
       iamInstanceProfile: nodes.cluster-api-provider-aws.sigs.k8s.io
       instanceType: t3.large
-      additionalTags:
-         Product: PMKEnterprise
-         Team: Enterprise
-         Environment: Development
 ---
 apiVersion: bootstrap.cluster.x-k8s.io/v1beta1
 kind: KubeadmConfigTemplate
