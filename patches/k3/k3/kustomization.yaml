@@ -5,4 +5,4 @@ resources:
 configurations:
 - configurations.yaml
 patchesStrategicMerge:
-- patch.yaml
+- patches.yaml

@@ -5,4 +5,3 @@ metadata:
 spec:
   region: us-west-2
   sshKeyName: leb
-
