@@ -4,3 +4,4 @@ metadata:
   name: mycluster-control-plane
 spec:
   region: us-west-1
+  version: v1.23.0
